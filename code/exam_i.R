@@ -43,7 +43,7 @@ mtcars_mpg25
 # Assign to: `mtcars_light_cyl4`
 
 mtcars_light_cyl4 <- mtcars %>% 
-  filter(wt < 2.5,
+  filter(wt < 2.5 ,
          cyl == 4)
 
 mtcars_light_cyl4
