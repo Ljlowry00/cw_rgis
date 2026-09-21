@@ -72,7 +72,7 @@ mtcars_gsec
 # Assign to: `mtcars_no_drat`
 
 mtcars_no_drat <- df_mtcars %>% 
-  select(-c("drat"))
+  select(-drat)
 
 mtcars_no_drat
 
@@ -161,9 +161,8 @@ colnames(PlantGrowth) # output from this code is the column names that can be us
 # Create a boxplot of `weight` by `group`, filling boxes by `group`.
 
 g_boxplot1 <- PlantGrowth %>% 
-  group_by("group") %>% 
-  ggplot(aes(x = weight,
-             fill = group)) +
+  ggplot(aes(x = group,
+             y = weight)) +
   geom_boxplot()
 
 g_boxplot1
@@ -173,9 +172,8 @@ g_boxplot1
 # Create a boxplot of `weight` by `group`, then overlay points showing individual observations.
 
 g_boxplot2 <- PlantGrowth %>% 
-  group_by(group) %>% 
-  ggplot(aes(x = weight,
-             y = factor(group))) +
+  ggplot(aes(x = group,
+             y = weight)) +
   geom_boxplot() + 
   geom_point()
 
